@@ -52,8 +52,17 @@ const octokit = new Octokit();
   return data;
 }
 
+async function searchRepoData(value) {
+  var result = await octokit.request("GET /repos/{repo}", {
+    repo: `${value}`    
+  });
+  
+
+  return result;
+}
+
 
 module.exports={
-  repositories,issues,search,pulls
+  repositories,issues,search,pulls,searchRepoData
 }
 

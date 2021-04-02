@@ -18,12 +18,17 @@ app.get("/repositories/:user", async (req, res) => {
 //Procurar algum repositorio no github.
 app.get("/search/:textsearch", async (req, res) => {
   const search = req.params.textsearch;
- 
-  
-const result = await githubApi.search(`${search}`);
+  const result = await githubApi.search(`${search}`);
 res.json(result)
-
 });
+
+app.get("/repo/:name", async (req, res) => {
+  const name = req.params.name;
+  const result = await githubApi.searchRepoData(`${name}`);
+res.json(result)
+});
+
+
 app.listen(process.env.PORT, () => {
   console.log("Server in Progress...");
 });
