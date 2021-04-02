@@ -22,13 +22,14 @@ app.get("/search/:textsearch", async (req, res) => {
 res.json(result)
 });
 
-app.get("/repo/:name", async (req, res) => {
+app.get("/repo/:name/:repo", async (req, res) => {
   const name = req.params.name;
-  const result = await githubApi.searchRepoData(`${name}`);
+  const repo=req.params.repo
+  const result = await githubApi.searchRepoData(name,repo);
 res.json(result)
 });
 
 
-app.listen(process.env.PORT, () => {
+app.listen(3000, () => {
   console.log("Server in Progress...");
 });

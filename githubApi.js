@@ -52,13 +52,14 @@ const octokit = new Octokit();
   return data;
 }
 
-async function searchRepoData(value) {
-  var result = await octokit.request("GET /repos/{repo}", {
-    repo: `${value}`    
+async function searchRepoData(owner,repo) {
+  var result = await octokit.request("GET /repos/{owner}/{repo}", {
+    owner:owner,
+    repo: repo    
   });
   
 
-  return result;
+  return result.data;
 }
 
 
