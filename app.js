@@ -24,6 +24,6 @@ const result = await githubApi.search(`${search}`);
 res.json(result)
 
 });
-app.listen(process.env.PORT_APP, () => {
+app.listen(process.env.PORT, () => {
   console.log("Server in Progress...");
 });
