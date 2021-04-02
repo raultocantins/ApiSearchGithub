@@ -16,7 +16,7 @@ app.get("/repositories/:user", async (req, res) => {
   }
 });
 //Procurar algum repositorio no github.
-app.post("/search/:textsearch", async (req, res) => {
+app.get("/search/:textsearch", async (req, res) => {
   const search = req.params.textsearch;
  
   
