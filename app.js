@@ -30,6 +30,6 @@ res.json(result)
 });
 
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log("Server in Progress...");
 });
